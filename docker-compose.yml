@@ -1,0 +1,29 @@
+version: "3.8"
+services:
+  db:
+    image: postgres:15
+    restart: always
+    environment:
+      POSTGRES_USER: prisma
+      POSTGRES_PASSWORD: prisma
+      POSTGRES_DB: pickleball
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  app:
+    build: .
+    environment:
+      DATABASE_URL: postgresql://prisma:prisma@db:5432/pickleball
+      NEXTAUTH_URL: http://localhost:3000
+      NEXTAUTH_SECRET: super-secret-placeholder
+      EMAIL_SERVER: ""
+      EMAIL_FROM: ""
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+
+volumes:
+  db-data:
