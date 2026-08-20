@@ -1,0 +1,7 @@
+{
+  "title": "chore: add pickleball booking app scaffold (Next.js + Prisma + NextAuth + Docker)",
+  "head": "init/pickleball-booking",
+  "base": "main",
+  "body": "Adds a starter Pickleball Booking app scaffold (Next.js + TypeScript, Prisma, Postgres).\n\nIncludes:\n- Next.js app with pages and API routes\n- Prisma schema and seed script\n- NextAuth email provider setup\n- Dockerfile + docker-compose\n- Basic booking conflict checks and slot generation\n\nSetup:\n1. Create .env.local with DATABASE_URL, NEXTAUTH_URL, NEXTAUTH_SECRET, EMAIL_SERVER, EMAIL_FROM\n2. Start DB (docker-compose up -d db)\n3. Install deps: npm install\n4. Generate client: npx prisma generate\n5. Run migrations: npx prisma migrate dev --name init\n6. Seed: npm run seed\n7. Run: npm run dev\n\nNotes:\n- Update NEXTAUTH_SECRET and EMAIL_SERVER before production.\n- Consider adding DB-level concurrency protections for booking creation.",
+  "maintainer_can_modify": true
+}

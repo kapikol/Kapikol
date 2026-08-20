@@ -1,0 +1,27 @@
+{
+  "name": "pickleball-booking",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "prisma:migrate": "prisma migrate dev",
+    "prisma:studio": "prisma studio",
+    "seed": "ts-node --compiler-options '{\"module\":\"CommonJS\"}' prisma/seed.ts"
+  },
+  "dependencies": {
+    "next": "14.x",
+    "react": "18.x",
+    "react-dom": "18.x",
+    "@prisma/client": "^4.14.0",
+    "prisma": "^4.14.0",
+    "next-auth": "^4.22.0",
+    "@next-auth/prisma-adapter": "^1.0.5",
+    "tailwindcss": "^3.4.0"
+  },
+  "devDependencies": {
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.0"
+  }
+}
