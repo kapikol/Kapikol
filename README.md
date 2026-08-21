@@ -1,27 +1,70 @@
-# Pickleball Booking
+# Pickleball Booking App
 
-This branch adds a scaffold for a Pickleball Booking app (Next.js + TypeScript + Prisma + Postgres + NextAuth).
+A full-stack web application for booking pickleball courts. Built with React, Node.js/Express, and PostgreSQL.
 
-Included:
-- Next.js app (pages API routes)
-- Prisma schema and seed script
-- NextAuth email provider (configure EMAIL_SERVER/EMAIL_FROM)
-- Dockerfile and docker-compose for postgres + app
+## 🎾 Features
+- User registration & login
+- Browse available courts
+- Book court time slots
+- View booking history
+- Admin dashboard for venue managers
+- Responsive design for mobile & desktop
 
-Quick start (local):
+## 🏗️ Project Structure
+```
+pickleball-booking-app/
+├── frontend/           # React application
+├── backend/            # Node.js/Express API
+├── database/           # SQL schema
+└── docs/              # Documentation
+```
 
-1) Copy .env.local with the following variables:
+## 🚀 Quick Start
 
-DATABASE_URL=postgresql://prisma:prisma@localhost:5432/pickleball
-NEXTAUTH_URL=http://localhost:3000
-NEXTAUTH_SECRET=replace-me-with-a-secret
-EMAIL_SERVER=smtp://user:pass@smtp.example.com:587
-EMAIL_FROM="Pickleball <noreply@example.com>"
+### Prerequisites
+- Node.js (v14+)
+- PostgreSQL (v12+)
+- Git
 
-2) Start Postgres (docker-compose up -d db) or run the full stack: docker-compose up --build
-3) Install deps: npm install
-4) Generate Prisma client and migrate: npx prisma generate && npx prisma migrate dev --name init
-5) Seed data: npm run seed
-6) Run dev: npm run dev
+### 1. Clone the repository
+```bash
+git clone https://github.com/Kapikol/kapikol.git
+cd kapikol
+git checkout pickleball-app
+```
 
-If you want, I can open a PR from this branch into the default branch with a description and migration instructions.
+### 2. Setup Database
+```bash
+cd database
+psql -U postgres -f schema.sql
+```
+
+### 3. Setup Backend
+```bash
+cd ../backend
+npm install
+cp .env.example .env
+npm start
+```
+Backend runs on `http://localhost:5000`
+
+### 4. Setup Frontend
+```bash
+cd ../frontend
+npm install
+npm run dev
+```
+Frontend runs on `http://localhost:5173`
+
+## 📚 Documentation
+- See `docs/API.md` for API endpoints
+- See `docs/SETUP.md` for detailed setup instructions
+- See `docs/DATABASE.md` for database schema
+
+## 🔗 Useful Links
+- [React Documentation](https://react.dev)
+- [Express Documentation](https://expressjs.com)
+- [PostgreSQL Documentation](https://www.postgresql.org/docs/)
+
+## 📝 License
+MIT

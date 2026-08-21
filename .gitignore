@@ -1,7 +1,28 @@
-node_modules
-.next
+# Dependencies
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Environment
+.env
 .env.local
-.env.development
-.env.production
-dist
-coverage
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Build
+dist/
+build/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
